@@ -4,7 +4,7 @@ The worst code I've written so far (in Rust btw). Check out the original [Bussin
 
 ## Why?
 
-Because we all know that Rust is the best language in the universe frfr no cap. And also because I like to suffer. This is only my like 3rd Rust project and I'm still figuring this language out so eel free to post this on r/badcode.
+Because we all know that Rust is the best language in the universe frfr no cap. And also because I like to suffer. This is only my like 3rd Rust project and I'm still figuring this language out so feel free to post this on r/badcode.
 
 ## Are there differences?
 
