@@ -247,9 +247,9 @@ fn equals(lhs: ValueType, rhs: ValueType, strict: bool) -> Result<ValueType, Box
             .call;
 
             Ok(mk_bool(Some(if strict {
-                native_fn_val.call == rhs_n_fn_val
+                std::ptr::fn_addr_eq(native_fn_val.call, rhs_n_fn_val)
             } else {
-                native_fn_val.call != rhs_n_fn_val
+                !std::ptr::fn_addr_eq(native_fn_val.call, rhs_n_fn_val)
             })))
         }
         ValueType::NullVal => {

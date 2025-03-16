@@ -117,7 +117,7 @@ impl EnvironmentScope for Environment {
         value: ValueType,
         constant: bool,
     ) -> Result<ValueType, Box<dyn Error>> {
-        if self.variables.borrow().contains_key(varname.clone()) {
+        if self.variables.borrow().contains_key(varname) {
             Err(format!(
                 "Cannot declare variable {}. As it already is defined.",
                 varname
@@ -126,12 +126,12 @@ impl EnvironmentScope for Environment {
 
         self.variables
             .borrow_mut()
-            .insert(varname.clone().to_string(), value.clone());
+            .insert(varname.to_string(), value.clone());
 
         if constant {
             self.constants
                 .borrow_mut()
-                .push(varname.clone().to_string());
+                .push(varname.to_string());
         }
 
         Ok(value)
